@@ -1,0 +1,15 @@
+r = requests.get(apiurl, params=request_params,auth=('admin','ibIPAM2017'),verify=False)
+
+so,
+session = requests.Session()
+requests.packages.urllib3.disable_warnings()
+
+params = DEFPARMS
+apiurl = 'https://ipam.unc.edu/wapi/v2.10.1/?_schema&_return_as_object=1'
+request_params = {}
+usr,pwd = params['usr'],params['pwd']
+
+r = requests.get(apiurl,params=request_params,auth=(usr,pwd),verify=False)
+r.status_code
+r.json()
+
